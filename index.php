@@ -63,9 +63,8 @@ if (isset($_POST['register'])) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>totoiscab</title>
-  <link rel="stylesheet" href="style.css">
+
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Include Font Awesome -->
@@ -346,6 +345,7 @@ if (isset($_POST['register'])) {
 
 
 
+
   <!-- Full-Width Image Section -->
   <section class="image-section full-section-image" style="background-image: url('images/hire2.jpg');">
     <!-- Welcome Card -->
@@ -587,7 +587,7 @@ if (isset($_POST['register'])) {
         <div id="bookingForm"
           style="display:none; margin:20px; background-image: url('images/back.jpg'); background-size: cover; background-position: center; background-color: transparent !important;"
           class="container justify-content-center align-items-center">
-          <div class="card p-4 shadow-sm" style=" width: 70%; margin:30px; border: 2px solid white; background-color: transparent;">
+          <div class="card p-4 shadow-sm" style=" width: 100%; margin:20px; border: 2px solid white; background-color: transparent;">
             <h3 class="card-title text-center text-light mb-4" style="margin-top:80px;">Make Your Booking</h3>
             <form class="container text-light" method="POST" action="login.php" style="background-color: transparent; width: 100%; padding: 20px; border: none;">
 
@@ -1147,12 +1147,12 @@ if (isset($_POST['register'])) {
     setTimeout(smoothSlide, 3000); // Start the cycle after 3 seconds
   </script>
   <!-- Include jQuery (before Bootstrap JS) -->
-  <script src="index.js"></script>
+  <!-- Bootstrap JS, jQuery, and Popper.js for Navbar Toggling -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 

@@ -274,16 +274,13 @@ include('config.php');
       $standard = "standard-taxi";
       $sql = "SELECT * FROM vehicles WHERE category = :standard ORDER BY id DESC";
       $query = $dbh->prepare($sql);
-      // Bind the 'standard' category parameter correctly
       $query->bindParam(':standard', $standard, PDO::PARAM_STR);
-
       $query->execute();
       $results = $query->fetchAll(PDO::FETCH_OBJ);
 
       if ($query->rowCount() > 0) {
         foreach ($results as $result) {
       ?>
-          <!-- Toyota Axio/Fielder -->
           <div class="col-md-4 mb-4">
             <div class="card h-100">
               <div class="card-img-hover">
@@ -301,87 +298,77 @@ include('config.php');
         echo "<p>No images found in the gallery.</p>";
       }
       ?>
+    </div> <!-- Close Standard Taxi Services Row -->
 
+    <!-- Self-Drive Hire/Chauffeur-Driven Hires -->
+    <h3 class="text-center mb-4">Self-Drive Hire/Chauffeur-Driven Hires</h3>
 
+    <div class="row">
+      <?php
+      $standard = "self-drive";
+      $sql = "SELECT * FROM vehicles WHERE category = :standard ORDER BY id DESC";
+      $query = $dbh->prepare($sql);
+      $query->bindParam(':standard', $standard, PDO::PARAM_STR);
+      $query->execute();
+      $results = $query->fetchAll(PDO::FETCH_OBJ);
 
-      <!-- Self-Drive Hire/Chauffeur-Driven Hires -->
-      <h3 class="text-center mb-4">Self-Drive Hire/Chauffeur-Driven Hires</h3>
-      <div class="row">
-        <!-- self drive -->
-        <?php
-        $standard = "self-drive";
-        $sql = "SELECT * FROM vehicles WHERE category = :standard ORDER BY id DESC";
-        $query = $dbh->prepare($sql);
-        // Bind the 'standard' category parameter correctly
-        $query->bindParam(':standard', $standard, PDO::PARAM_STR);
-
-        $query->execute();
-        $results = $query->fetchAll(PDO::FETCH_OBJ);
-
-        if ($query->rowCount() > 0) {
-          foreach ($results as $result) {
-        ?>
-            <!-- Toyota Axio/Fielder -->
-            <div class="col-md-4 mb-4">
-              <div class="card h-100">
-                <div class="card-img-hover">
-                  <img src="./images/<?php echo htmlentities($result->image); ?>" class="card-img-top" alt="Toyota Axio/Fielder">
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title text-center"><?php echo htmlentities($result->name); ?></h5>
-                  <p class="card-text text-center">Max passengers: <?php echo htmlentities($result->capacity); ?></p>
-                </div>
+      if ($query->rowCount() > 0) {
+        foreach ($results as $result) {
+      ?>
+          <div class="col-md-4 mb-4">
+            <div class="card h-100">
+              <div class="card-img-hover">
+                <img src="./images/<?php echo htmlentities($result->image); ?>" class="card-img-top" alt="Toyota Axio/Fielder">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title text-center"><?php echo htmlentities($result->name); ?></h5>
+                <p class="card-text text-center">Max passengers: <?php echo htmlentities($result->capacity); ?></p>
               </div>
             </div>
-        <?php
-          }
-        } else {
-          echo "<p>No images found in the gallery.</p>";
+          </div>
+      <?php
         }
-        ?>
+      } else {
+        echo "<p>No images found in the gallery.</p>";
+      }
+      ?>
+    </div> <!-- Close Self-Drive Hire/Chauffeur-Driven Hires Row -->
 
+    <!-- Executive Chauffeur-Driven Rides -->
+    <h3 class="text-center mb-4">Executive Chauffeur-Driven Rides</h3>
 
+    <div class="row">
+      <?php
+      $standard = "executive";
+      $sql = "SELECT * FROM vehicles WHERE category = :standard ORDER BY id DESC";
+      $query = $dbh->prepare($sql);
+      $query->bindParam(':standard', $standard, PDO::PARAM_STR);
+      $query->execute();
+      $results = $query->fetchAll(PDO::FETCH_OBJ);
 
-        <!-- Executive Chauffeur-Driven Rides -->
-        <h3 class="text-center mb-4">Executive Chauffeur-Driven Rides</h3>
-        <div class="row">
-
-          <?php
-          $standard = "executive";
-          $sql = "SELECT * FROM vehicles WHERE category = :standard ORDER BY id DESC";
-          $query = $dbh->prepare($sql);
-          // Bind the 'standard' category parameter correctly
-          $query->bindParam(':standard', $standard, PDO::PARAM_STR);
-
-          $query->execute();
-          $results = $query->fetchAll(PDO::FETCH_OBJ);
-
-          if ($query->rowCount() > 0) {
-            foreach ($results as $result) {
-          ?>
-              <!-- Toyota Axio/Fielder -->
-              <div class="col-md-4 mb-4">
-                <div class="card h-100">
-                  <div class="card-img-hover">
-                    <img src="./images/<?php echo htmlentities($result->image); ?>" class="card-img-top" alt="Toyota Axio/Fielder">
-                  </div>
-                  <div class="card-body">
-                    <h5 class="card-title text-center"><?php echo htmlentities($result->name); ?></h5>
-                    <p class="card-text text-center">Max passengers: <?php echo htmlentities($result->capacity); ?></p>
-                  </div>
-                </div>
+      if ($query->rowCount() > 0) {
+        foreach ($results as $result) {
+      ?>
+          <div class="col-md-4 mb-4">
+            <div class="card h-100">
+              <div class="card-img-hover">
+                <img src="./images/<?php echo htmlentities($result->image); ?>" class="card-img-top" alt="Toyota Axio/Fielder">
               </div>
-          <?php
-            }
-          } else {
-            echo "<p>No images found in the gallery.</p>";
-          }
-          ?>
+              <div class="card-body">
+                <h5 class="card-title text-center"><?php echo htmlentities($result->name); ?></h5>
+                <p class="card-text text-center">Max passengers: <?php echo htmlentities($result->capacity); ?></p>
+              </div>
+            </div>
+          </div>
+      <?php
+        }
+      } else {
+        echo "<p>No images found in the gallery.</p>";
+      }
+      ?>
+    </div> <!-- Close Executive Chauffeur-Driven Rides Row -->
 
-        </div>
-      </div>
   </section>
-
 
 
 
