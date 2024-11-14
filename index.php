@@ -308,6 +308,20 @@ if (isset($_POST['register'])) {
       text-align: center;
     }
   </style>
+  <style>
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    ::-webkit-scrollbar {
+      display: none !important;
+    }
+
+    /* Hide scrollbar for all browsers */
+    html {
+      -ms-overflow-style: none !important;
+      /* IE and Edge */
+      scrollbar-width: none !important;
+      /* Firefox */
+    }
+  </style>
 
 </head>
 
@@ -817,7 +831,7 @@ if (isset($_POST['register'])) {
   </script>
 
 
-  <!-- contact us section -->
+  <!-- Contact Us Section -->
   <section id="contact" class="py-5 bg-light">
     <div class="container">
       <div class="row justify-content-center">
@@ -837,14 +851,13 @@ if (isset($_POST['register'])) {
             <div class="form-group mb-4">
               <label for="email" class="font-weight-bold">Your Email</label>
               <input type="email" name="email" class="form-control form-control-lg" id="email1" placeholder="Enter your email" required>
-
             </div>
             <div class="form-group mb-4">
               <label for="message" class="font-weight-bold">Your Message</label>
               <textarea class="form-control form-control-lg" name="message" id="message" rows="5" placeholder="Enter your message" required></textarea>
             </div>
             <button type="submit" name="submit" class="btn btn-success btn-block btn-lg" style="width: auto; display: block; 
-  margin: 0 auto;  border-radius: 6px; background-color:#28a745 !important;">Send Message</button>
+  margin: 0 auto; border-radius: 6px; background-color:#28a745 !important;">Send Message</button>
           </form>
         </div>
         <!-- Contact Details -->
@@ -856,28 +869,23 @@ if (isset($_POST['register'])) {
               <strong>Phone:</strong>
               <a href="tel:+254758077188" class="text-dark">+254 758 077188</a>
             </p>
-
             <p class="mb-3">
               <i class="fas fa-envelope text-primary"></i>
               <strong>Email:</strong>
               <a href="mailto:totoiscabs@gmail.com" class="text-dark">totoiscabs@gmail.com</a>
             </p>
-
-            <p class="mb-3"><i class="fas fa-map-marker-alt text-primary"></i> <strong>Location:</strong> Karen Road, Number 76/77 opposite The Hub
-              – 00100, Nairobi</p>
+            <p class="mb-3">
+              <i class="fas fa-map-marker-alt text-primary"></i>
+              <strong>Location:</strong> Karen Road, Number 76/77 opposite The Hub – 00100, Nairobi
+            </p>
             <!-- Button to Trigger the Form Section -->
             <button id="bookRideBtn" class="btn btn-success mb-3">BOOK A RIDE</button>
-
-
-
-
-
-
           </div>
         </div>
       </div>
     </div>
   </section>
+
 
 
 

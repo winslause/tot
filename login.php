@@ -38,7 +38,7 @@ if (isset($_POST['login'])) {
         }
     } else {
         echo "<script>
-                    alert('It appears that you dont have an account!');
+                    alert('email or password is incorrect. Please try again or create an account');
                     window.location.href = 'index.php'; // Redirect after alert
                   </script>";
     }

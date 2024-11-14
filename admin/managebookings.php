@@ -158,7 +158,7 @@ if (strlen($_SESSION['alogin']) == 0) {
 
         <!-- Table for Bookings -->
         <div class="table-responsive">
-          <h5>Complete Bookings</h5>
+          <h5>Confirmed Bookings</h5>
           <table class="table table-striped table-bordered table-hover">
             <thead class="thead-dark">
               <tr>
