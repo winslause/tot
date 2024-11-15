@@ -6,6 +6,7 @@ ini_set('display_errors', 1);
 // Include database configuration
 //include 'config.php';
 include('login.php');
+// include("resetpassword.php");
 
 if (isset($_POST['register'])) {
   // Get form inputs
@@ -69,259 +70,7 @@ if (isset($_POST['register'])) {
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Include Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-  <style>
-    html,
-    body {
-      overflow-x: hidden;
-      /* Disable horizontal scrolling */
-      margin: 0;
-      padding: 0;
-      width: 100%;
-    }
-
-    /* Image section slide-in animation */
-    .image-section {
-      animation: slideInImage 2s ease-in-out;
-      /* Animation for image section */
-      width: 100% !important;
-      height: 100vh;
-      /* Full viewport height */
-      background-size: cover !important;
-      /* Ensures the background image covers the entire area */
-      background-position: center !important;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-    }
-
-
-
-
-    /* Define the image slide-in keyframes */
-    @keyframes slideInImage {
-      0% {
-        transform: translateY(-100%);
-        opacity: 0;
-        /* Fully transparent */
-      }
-
-      100% {
-        transform: translateY(0);
-        /* Image back to its original position */
-        opacity: 1;
-        /* Fully visible */
-      }
-    }
-
-    /* Initially hide the welcome card */
-    #welcomeCard {
-      display: none;
-      /* Hide the card initially */
-      background: rgba(255, 255, 255, 0.6);
-      /* Light background overlay */
-      padding: 20px;
-      border-radius: 10px;
-      max-width: 80%;
-      margin: 0 auto;
-      position: relative;
-    }
-
-    /* Zoom-in animation for the welcome card */
-    .zoomInCard {
-      animation: zoomInCard 2s ease-in-out;
-    }
-
-    /* Define the zoom-in keyframes for the welcome card */
-    @keyframes zoomInCard {
-      0% {
-        transform: scale(0);
-        /* Start with the card very small */
-        opacity: 0;
-        /* Fully transparent */
-      }
-
-      100% {
-        transform: scale(1);
-        /* Normal size */
-        opacity: 1;
-        /* Fully visible */
-      }
-    }
-
-    /* About Us section */
-    #aboutCarousel {
-      position: relative;
-    }
-
-    /* Position arrows outside the cards */
-    .carousel-control-prev,
-    .carousel-control-next {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 5;
-      /* Ensure arrows are above content */
-      background-color: rgba(0, 0, 0, 0.7);
-      /* Semi-transparent background */
-      border: none;
-      /* Remove borders */
-      width: 40px;
-      /* Optional: Adjust the width of the arrows */
-      height: 40px;
-      /* Optional: Adjust the height of the arrows */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 50%;
-      /* Circular background */
-    }
-
-    /* Navbar Styling */
-    #uniqueNavbar {
-      position: fixed;
-      /* Fixed at the top */
-      width: 100%;
-      top: 0;
-      left: 0;
-      z-index: 1030;
-      /* Ensure it stays above other content */
-      transition: background-color 0.3s ease;
-      /* Smooth transition for color change */
-    }
-
-    /* Default navbar color (black) */
-    #uniqueNavbar.navbar-dark {
-      background-color: #000;
-      /* Black background */
-    }
-
-    /* Navbar color on scroll */
-    #uniqueNavbar.scrolled {
-      background-color: #28a745;
-      /* Light green background */
-    }
-
-    /* When scrolling down, the navbar will have a background color of rgba(0, 86, 179, 0.5) */
-    .scrolled {
-      background-color: rgba(40, 167, 69, 0.5) !important;
-    }
-
-
-    #packages {
-      background: url('images/back.jpg') no-repeat center center;
-      background-size: cover;
-      position: relative;
-      padding: 60px 0;
-      margin-top: 10px;
-    }
-
-
-    /* Background image and footer overlay styling */
-    .custom-footer {
-      background-image: url('images/back2.jpg');
-      background-size: cover;
-      background-position: center;
-      position: relative;
-      padding: 50px 0;
-    }
-
-    .footer-overlay {
-      background: rgba(0, 0, 0, 0.6);
-      /* Dark overlay on background */
-      padding: 30px;
-    }
-
-    /* Section inside the footer with light shading */
-    .footer-section {
-      background-color: rgba(40, 167, 69, 0.8);
-      /* Light bg-success color */
-      padding: 20px;
-      border-radius: 10px;
-      margin: 20px;
-      color: #fff;
-    }
-
-    /* Logo animation: spin 360 degrees continuously */
-    .footer-logo {
-      max-width: 100px;
-      animation: spin 4s linear infinite;
-    }
-
-    @keyframes spin {
-      0% {
-        transform: rotate(0deg);
-      }
-
-      100% {
-        transform: rotate(360deg);
-      }
-    }
-
-    /* Social media icon styles */
-    .social-icons a {
-      font-size: 24px;
-      margin: 0 10px;
-      transition: transform 0.3s ease;
-    }
-
-    .social-icons a:hover {
-      transform: scale(1.2);
-    }
-
-    /* Responsive styling */
-    @media (max-width: 768px) {
-      .social-icons a {
-        font-size: 20px;
-      }
-    }
-
-    #aboutCarousel .carousel-item img {
-      border-radius: 15px !important;
-      /* Adjust the value as needed */
-    }
-
-
-    body {
-      overflow: smooth !important;
-      scroll-behavior: smooth !important;
-    }
-
-
-    /* Smooth transition for the booking form */
-    #bookingForm {
-      opacity: 0;
-      transform: translateY(-20px);
-      transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-
-    /* On showing the form, animate it */
-    #bookingForm.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Styling for the Contact Us Section */
-    #contactUsSection {
-      margin-top: 50px;
-      text-align: center;
-    }
-  </style>
-  <style>
-    /* Hide scrollbar for Chrome, Safari and Opera */
-    ::-webkit-scrollbar {
-      display: none !important;
-    }
-
-    /* Hide scrollbar for all browsers */
-    html {
-      -ms-overflow-style: none !important;
-      /* IE and Edge */
-      scrollbar-width: none !important;
-      /* Firefox */
-    }
-  </style>
+  <link rel="stylesheet" href="index.css">
 
 </head>
 
@@ -807,7 +556,93 @@ if (isset($_POST['register'])) {
           </form>
         </div>
         <div class="modal-footer justify-content-center">
-          <p>Don't have an account? <a href="#register-section" data-bs-dismiss="modal">Register</a></p>
+          <p><a href="#register-section" data-bs-dismiss="modal">Register</a></p>
+          <p><a href="#" data-bs-toggle="modal" data-bs-target="#forgotPasswordModal" data-bs-dismiss="modal">Forgot Password?</a></p>
+          <p><a href="#" data-bs-toggle="modal" data-bs-target="#resetPasswordModal" data-bs-dismiss="modal">Reset Password</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Forgot Password Modal -->
+  <div class="modal fade" id="forgotPasswordModal" tabindex="-1" aria-labelledby="forgotPasswordModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="forgotPasswordModalLabel">Forgot Password</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="resetpassword.php" method="POST">
+            <!-- Email Input -->
+            <div class="mb-3">
+              <label for="forgot-password-email" class="form-label">Email Address</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                <input type="email" name="forgotpasswordemail" class="form-control" id="forgot-password-email" placeholder="Enter your email" required>
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" name="sendresetlink" class="btn btn-primary w-100">Send Reset Link</button>
+          </form>
+        </div>
+        <div class="modal-footer justify-content-center">
+          <p>Remember your password? <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-dismiss="modal">Login</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Reset Password Modal -->
+  <div class="modal fade" id="resetPasswordModal" tabindex="-1" aria-labelledby="resetPasswordModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="resetPasswordModalLabel">Reset Your Password</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="resetpassword.php" method="POST">
+            <!-- Email Input -->
+            <div class="mb-3">
+              <label for="reset-password-email" class="form-label">Email Address</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                <input type="email" name="resetpasswordemail" class="form-control" id="reset-password-email" placeholder="Enter your email" required>
+              </div>
+            </div>
+
+            <!-- Received Password Input -->
+            <div class="mb-3">
+              <label for="reset-received-password" class="form-label">Password from Email(current password)</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                <input type="password" name="receivedpassword" class="form-control" id="reset-received-password" placeholder="Enter the password received from email" required>
+                <span class="input-group-text" onclick="togglePasswordVisibility('reset-received-password', 'reset-received-password-eye')" style="cursor: pointer;">
+                  <i id="reset-received-password-eye" class="fas fa-eye"></i>
+                </span>
+              </div>
+            </div>
+
+            <!-- New Password Input -->
+            <div class="mb-3">
+              <label for="reset-new-password" class="form-label">New Password</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                <input type="password" name="newpassword" class="form-control" id="reset-new-password" placeholder="Enter new password" required>
+                <span class="input-group-text" onclick="togglePasswordVisibility('reset-new-password', 'reset-new-password-eye')" style="cursor: pointer;">
+                  <i id="reset-new-password-eye" class="fas fa-eye"></i>
+                </span>
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" name="resetpassword" class="btn btn-primary w-100">Reset Password</button>
+          </form>
+        </div>
+        <div class="modal-footer justify-content-center">
+          <p>Back to <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-dismiss="modal">Login</a></p>
         </div>
       </div>
     </div>
@@ -828,6 +663,23 @@ if (isset($_POST['register'])) {
         eyeIcon.classList.add('fa-eye');
       }
     }
+
+
+    function togglePasswordVisibility(inputId, eyeIconId) {
+  const input = document.getElementById(inputId);
+  const eyeIcon = document.getElementById(eyeIconId);
+  
+  if (input.type === "password") {
+    input.type = "text";
+    eyeIcon.classList.remove("fa-eye");
+    eyeIcon.classList.add("fa-eye-slash");
+  } else {
+    input.type = "password";
+    eyeIcon.classList.remove("fa-eye-slash");
+    eyeIcon.classList.add("fa-eye");
+  }
+}
+
   </script>
 
 

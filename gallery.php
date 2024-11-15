@@ -267,7 +267,7 @@ include('config.php');
     <h2 class="text-center mb-4" style="color: #28a745; margin-top:100px"><b>Our Vehicles</b></h2>
 
     <!-- Standard Taxi Services -->
-    <h3 class="text-center mb-4">Standard Taxi Services</h3>
+    <h3 class="text-center text-success mb-4">Standard Taxi Services</h3>
 
     <div class="row">
       <?php
@@ -301,7 +301,7 @@ include('config.php');
     </div> <!-- Close Standard Taxi Services Row -->
 
     <!-- Self-Drive Hire/Chauffeur-Driven Hires -->
-    <h3 class="text-center mb-4">Self-Drive Hire/Chauffeur-Driven Hires</h3>
+    <h3 class="text-center text-success mb-4">Self-Drive Hire/Chauffeur-Driven Hires</h3>
 
     <div class="row">
       <?php
@@ -335,7 +335,7 @@ include('config.php');
     </div> <!-- Close Self-Drive Hire/Chauffeur-Driven Hires Row -->
 
     <!-- Executive Chauffeur-Driven Rides -->
-    <h3 class="text-center mb-4">Executive Chauffeur-Driven Rides</h3>
+    <h3 class="text-center text-success mb-4">Executive Chauffeur-Driven Rides</h3>
 
     <div class="row">
       <?php
