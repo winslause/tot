@@ -666,20 +666,19 @@ if (isset($_POST['register'])) {
 
 
     function togglePasswordVisibility(inputId, eyeIconId) {
-  const input = document.getElementById(inputId);
-  const eyeIcon = document.getElementById(eyeIconId);
-  
-  if (input.type === "password") {
-    input.type = "text";
-    eyeIcon.classList.remove("fa-eye");
-    eyeIcon.classList.add("fa-eye-slash");
-  } else {
-    input.type = "password";
-    eyeIcon.classList.remove("fa-eye-slash");
-    eyeIcon.classList.add("fa-eye");
-  }
-}
+      const input = document.getElementById(inputId);
+      const eyeIcon = document.getElementById(eyeIconId);
 
+      if (input.type === "password") {
+        input.type = "text";
+        eyeIcon.classList.remove("fa-eye");
+        eyeIcon.classList.add("fa-eye-slash");
+      } else {
+        input.type = "password";
+        eyeIcon.classList.remove("fa-eye-slash");
+        eyeIcon.classList.add("fa-eye");
+      }
+    }
   </script>
 
 
@@ -1006,6 +1005,41 @@ if (isset($_POST['register'])) {
     // Start the smooth sliding process
     setTimeout(smoothSlide, 3000); // Start the cycle after 3 seconds
   </script>
+
+
+  <!-- back button -->
+  <button id="backButton" class="btn btn-success">Back</button>
+  <style>
+    #backButton {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      background-color: rgba(76, 175, 80, 0.5);
+      ;
+
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+      z-index: 1000;
+    }
+
+    #backButton:hover {
+      background-color: rgba(76, 175, 80, 0.7);
+    }
+  </style>
+  <script>
+    document.getElementById("backButton").addEventListener("click", function() {
+      window.history.back(); // Goes to the previous page
+    });
+    document.getElementById("backButton").addEventListener("click", function() {
+      window.history.back(); // Goes to the previous page
+    });
+  </script>
+
+
   <!-- Include jQuery (before Bootstrap JS) -->
   <!-- Bootstrap JS, jQuery, and Popper.js for Navbar Toggling -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

@@ -246,7 +246,7 @@ include('config.php');
           <a class="nav-link text-light" href="index.php" style="padding: 10px;">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light" href="#">Our services</a>
+          <a class="nav-link text-light" href="index.php#about-us">Our services</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-light" href="#">Gallery</a>
@@ -472,6 +472,37 @@ include('config.php');
       document.querySelector('.loader-container').style.display = 'none';
     };
   </script>
+  <!-- back button -->
+  <button id="backButton" class="btn btn-success">Back</button>
+  <style>
+    #backButton {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      background-color: rgba(76, 175, 80, 0.5);
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+      z-index: 1000;
+    }
+
+    #backButton:hover {
+      background-color: rgba(76, 175, 80, 0.7);
+    }
+  </style>
+  <script>
+    document.getElementById("backButton").addEventListener("click", function() {
+      window.history.back(); // Goes to the previous page
+    });
+    document.getElementById("backButton").addEventListener("click", function() {
+      window.history.back(); // Goes to the previous page
+    });
+  </script>
+
+
 
 
 </body>
