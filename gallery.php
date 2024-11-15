@@ -246,7 +246,7 @@ include('config.php');
           <a class="nav-link text-light" href="index.php" style="padding: 10px;">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light" href="index.php#about-us">Our services</a>
+          <a class="nav-link text-light" href="index.php#about-us1">Our services</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-light" href="#">Gallery</a>
